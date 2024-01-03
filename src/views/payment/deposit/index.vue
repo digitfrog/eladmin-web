@@ -10,10 +10,18 @@
         <el-input v-model="query.status" clearable placeholder="状态" style="width: 185px;" class="filter-item" @keyup.enter.native="crud.toQuery" />
         <label class="el-form-item-label">币种</label>
         <el-input v-model="query.currency" clearable placeholder="币种" style="width: 185px;" class="filter-item" @keyup.enter.native="crud.toQuery" />
+        <label class="el-form-item-label">用户名</label>
+        <el-input v-model="query.username" clearable placeholder="用户名" style="width: 185px;" class="filter-item" @keyup.enter.native="crud.toQuery" />
         <date-range-picker
           v-model="query.createTime"
           start-placeholder="createTimeStart"
           end-placeholder="createTimeStart"
+          class="date-item"
+        />
+        <date-range-picker
+          v-model="query.updateTime"
+          start-placeholder="updateTimeStart"
+          end-placeholder="updateTimeStart"
           class="date-item"
         />
         <rrOperation :crud="crud" />
@@ -191,7 +199,8 @@ export default {
       queryTypeOptions: [
         { key: 'id', display_name: 'id' },
         { key: 'status', display_name: '状态' },
-        { key: 'currency', display_name: '币种' }
+        { key: 'currency', display_name: '币种' },
+        { key: 'username', display_name: '用户名' }
       ]
     }
   },
