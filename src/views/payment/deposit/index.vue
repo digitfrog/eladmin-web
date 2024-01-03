@@ -150,11 +150,12 @@ import rrOperation from '@crud/RR.operation'
 import crudOperation from '@crud/CRUD.operation'
 import udOperation from '@crud/UD.operation'
 import pagination from '@crud/Pagination'
+import DateRangePicker from '@/components/DateRangePicker/index.vue'
 
 const defaultForm = { id: null, orderId: null, platOrderId: null, uid: null, walletId: null, merchantId: null, status: null, currency: null, payAmount: null, exchangeRate: null, realAmount: null, channelFee: null, channelCode: null, channelName: null, username: null, mark: null, createTime: null, updateTime: null }
 export default {
   name: 'PayDeposit',
-  components: { pagination, crudOperation, rrOperation, udOperation },
+  components: { DateRangePicker, pagination, crudOperation, rrOperation, udOperation },
   mixins: [presenter(), header(), form(defaultForm), crud()],
   dicts: ['deposit_status', 'currency'],
   cruds() {
